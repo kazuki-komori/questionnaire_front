@@ -1,31 +1,26 @@
 <script>
-  const world = 'postcss'; // edit world and save to see hmr update
-  import Hello from './pages/hello.svelte'
+  import AppHeader from "./components/app/AppHeader.svelte";
+  import Home from './pages/home.svelte'
   import page from 'page'
+  import AppContainer from "./components/app/AppContainer.svelte";
+
   let component = ''
-  page('/hello', () => component = Hello)
+  page('/', () => component = Home)
   page()
 </script>
 
 <style>
-  h1 {
-    color: orangered; /* change color an save to see hmr update */
-    /* you can also use css nesting
-    & .world {
-      font-size: 2rem;
-    }
-    */
-  }
-  .world {
-    @apply text-green-500 italic; /*  here's some tailwind apply */
-  }
 </style>
 
-<h1 class="border border-current rounded p-4 m-4">
-  <!-- tailwind classes in svelte template -->
-  Hello
-<!--  <span class="world">{world}</span>-->
-<!--  <Hello hello="hoge" />-->
-  <svelte:component this="{component}"/>
-</h1>
+<div>
+  <div class="relative h-96 w-full bg-indigo-400">
+    <div class="absolute bottom-0 left-0 w-full transform rotate-180 z-0">
+      <img alt="img" src="/images/liner.svg">
+    </div>
+    <AppHeader/>
+    <AppContainer>
+      <svelte:component this="{component}"/>
+    </AppContainer>
+  </div>
+</div>
 
