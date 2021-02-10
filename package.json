@@ -6,7 +6,7 @@
     "build": "svite build"
   },
   "dependencies": {
-    "page": "^1.11.6"
+    "svelte-spa-router": "^3.1.0"
   },
   "devDependencies": {
     "postcss": "^7.0.35",
